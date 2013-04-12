@@ -1,0 +1,1 @@
+puts 'Skipped question because it deals with python serialization (pickle) that is not interesting to do in Ruby. Answer is "channel".'
