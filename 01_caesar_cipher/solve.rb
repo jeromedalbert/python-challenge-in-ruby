@@ -5,9 +5,9 @@ sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.
 EOS
 
 # Old
-#def decipher(string)
-#  string.split("").map{ |c| c =~ /[\s.']/ ? c : c.succ.succ[-1] }.join
-#end
+# def decipher(string)
+#  string.chars.map{ |c| c =~ /[\s.']/ ? c : c.succ.succ[-1] }.join
+# end
 
 # Better ! Shorter and no need to handle punctuations, spaces, etc.
 def decipher(string)
