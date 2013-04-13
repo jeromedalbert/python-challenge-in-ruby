@@ -22,9 +22,9 @@ img = Image.from_file('oxygen.png')
 y = first_gray_y(img)
 
 x_array = [0] + (1...img.width).select { |x| img[x, y] != img[x-1, y] }
-different_pixels = x_array.map { |x| img[x, y] }
+pixels = x_array.map { |x| img[x, y] }
 
-answer = different_pixels.map { |e| gray_color(e).chr }.join  
+answer = pixels.map { |e| gray_color(e).chr }.join  
 answer = answer[/\[(.*)\]/, 1].split(", ").map { |e| e.to_i.chr }
 
 p answer
