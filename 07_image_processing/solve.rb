@@ -1,3 +1,4 @@
+# Uses Chunky PNG gem
 require 'chunky_png'
 include ChunkyPNG
 

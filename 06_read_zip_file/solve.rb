@@ -1,4 +1,4 @@
-# Uses rubyzip
+# Uses rubyzip gem
 require 'zip/zip'
 
 nothing = "90052"
