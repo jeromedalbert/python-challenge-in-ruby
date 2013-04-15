@@ -26,14 +26,27 @@ def solve_level6_part
     end
   end
 
+  puts
   puts Bzip2.uncompress(CGI::unescape(result))
+  puts
 end
 
 def solve_level13_part
   server = XMLRPC::Client.new2("http://huge:file@www.pythonchallenge.com/pc/phonebook.php").proxy
+  puts server.phone('Leopold')
+  puts
+end
+
+def call_leopold
+  solve_level13_part
   
-  puts server.phone('Leopold') # Mozart's father
+  uri = URI("http://www.pythonchallenge.com/pc/stuff/violin.php")
+  req = Net::HTTP::Get.new(uri.request_uri)
+  req['Cookie'] = "info=the flowers are on their way"
+  
+  res = Net::HTTP.new(uri.host, uri.port).request(req)
+  puts res.body
 end
 
 solve_level6_part
-solve_level13_part
+call_leopold
