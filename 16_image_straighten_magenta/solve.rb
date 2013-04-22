@@ -5,7 +5,7 @@ include Magick
 MAGENTA = Pixel.from_color("magenta")
 
 def straighten_magenta(pixel_line)
-  index = pixel_line.each_with_index.find { |pixel, i| pixel == MAGENTA }.last
+  index = pixel_line.each_with_index.find { |pixel, _| pixel == MAGENTA }.last
   
   pixel_line[index..-1] + pixel_line[0..index-1]
 end
