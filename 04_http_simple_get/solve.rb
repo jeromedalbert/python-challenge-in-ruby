@@ -1,9 +1,10 @@
 require 'net/http'
 
 url = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing="
+finished = false
 nothing = "12345"
 
-400.times do
+until finished do
   uri = URI("#{url}#{nothing}")
   response = Net::HTTP.get(uri)
 
@@ -13,7 +14,7 @@ nothing = "12345"
   when /Divide by two/
     nothing = nothing.to_i / 2
   when /.html/
-    exit
+    finished = true
   else
     nothing = response.split[-1]
   end
