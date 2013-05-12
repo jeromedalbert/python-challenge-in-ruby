@@ -1,15 +1,16 @@
 require 'net/http'
 
-url = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing="
+URL = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing='
+
 finished = false
-nothing = "12345"
+nothing = '12345'
 
 until finished do
-  uri = URI("#{url}#{nothing}")
+  uri = URI("#{URL}#{nothing}")
   response = Net::HTTP.get(uri)
 
   puts response
-  
+
   case response
   when /Divide by two/
     nothing = nothing.to_i / 2
@@ -19,4 +20,3 @@ until finished do
     nothing = response.split[-1]
   end
 end
-

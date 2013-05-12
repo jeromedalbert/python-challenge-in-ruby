@@ -1,6 +1,6 @@
 require 'net/http'
 
-SITE_URI = URI("http://www.pythonchallenge.com/pc/hex/unreal.jpg")
+SITE_URI = URI('http://www.pythonchallenge.com/pc/hex/unreal.jpg')
 
 def http_get(range_start)
   req = Net::HTTP::Get.new(SITE_URI.request_uri)
@@ -25,10 +25,10 @@ move_up = true
 
 until finished do
   res = http_get(range_start)
-  
+
   puts "Content-range: #{res['Content-range']}"
   puts "Body: #{res.body}\n"
-  
+
   if res.body =~ /you are inside/
     range_start = res['Content-range'][/\d+$/]
     move_up = false
@@ -41,4 +41,4 @@ until finished do
 end
 
 res = http_get(range_start)
-File.open("output.zip", "w") { |file| file.write(res.body) }
+File.open('output.zip', 'w') { |file| file.write(res.body) }

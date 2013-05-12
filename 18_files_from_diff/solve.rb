@@ -12,9 +12,9 @@ end
 
 
 lines_left, lines_right = [], []
-imgs_out = { "+" => "", "-" => "", "=" => "" }
+imgs_out = { '+' => '', '-' => '', '=' => '' }
 
-File.open("deltas", "r").each_line do |line|
+File.open('deltas', 'r').each_line do |line|
   lines_left << line[0..52]
   lines_right << line[56..-2] # Must not take \n character !!! :-)
 end
@@ -28,5 +28,5 @@ diffs.flatten.each do |diff|
 end
 
 imgs_out.each do |key, content|
-  File.open("#{key}_out.png", "w") { |file| file.write(content) }
+  File.open("#{key}_out.png", 'w') { |file| file.write(content) }
 end
