@@ -34,7 +34,9 @@ Let's reverse the endianness of these bytes.
 EOS
 
   samples = data_chunk.data.chars
-  data_chunk.data = samples.each_slice(2).map { |byte1, byte2| [byte2, byte1] }.join
+  data_chunk.data = samples.each_slice(2).
+                            map { |byte1, byte2| [byte2, byte1] }.
+                            join
 
   File.open('indian_reversed.wav', 'w') do |file|
     WavFile::write(file, format, [data_chunk])

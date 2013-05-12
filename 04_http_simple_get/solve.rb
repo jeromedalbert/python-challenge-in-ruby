@@ -17,6 +17,6 @@ until finished do
   when /.html/
     finished = true
   else
-    nothing = response.split[-1]
+    nothing = response.split.last
   end
 end

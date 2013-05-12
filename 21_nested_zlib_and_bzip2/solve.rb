@@ -2,11 +2,11 @@ require 'zlib'
 # Uses bzip2-ruby gem
 require 'bzip2'
 
-def is_zlib(str)
+def zlib?(str)
   get_signature(str) == '789c'
 end
 
-def is_bzip2(str)
+def bzip2?(str)
   get_signature(str) == '425a'
 end
 
@@ -21,11 +21,11 @@ finished = false
 ascii_logs = ''
 
 until finished do
-  if is_zlib(content)
+  if zlib?(content)
     ascii_logs += ' '
 
     content = Zlib::Inflate.inflate(content)
-  elsif is_bzip2(content)
+  elsif bzip2?(content)
     ascii_logs += 'a'
 
     content = Bzip2.uncompress(content)
@@ -33,7 +33,7 @@ until finished do
     ascii_logs += "\n"
 
     content = content.reverse
-    finished = true unless is_zlib(content)
+    finished = true unless zlib?(content)
   end
 end
 
