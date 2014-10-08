@@ -1,8 +1,8 @@
 # Python Challenge in Ruby
 
-I decided to do the http://www.pythonchallenge.com in Ruby, to get more acquainted with this language.
+Back in the day when I was learning Ruby, I decided to do the http://www.pythonchallenge.com (in Ruby) to get more acquainted with this language. The quality of the code written back then was not great, but I keep this repository available for other people who might be doing the same challenge.
 
-Each folder represents a level. Some files may contain personal comments reflecting my Ruby discoveries.
+Each folder represents a level.
 
 
 ## Usage
